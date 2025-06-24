@@ -19,6 +19,8 @@ display:flex;
 justify-content:center;
 }
 .display{
+    color:white;
+    background: black;
    padding:60px 15px;
    border-radius:15px;
    font-size:30px;
@@ -26,17 +28,22 @@ justify-content:center;
    
 }
 .calculator{
-    background-color:#f7b9ca;
-    height:500px;
+    
+    background-color:black;
     max-width:90%;
-    padding:20px;
+    padding-top:20px;
+    padding-right:20px;
+    padding-left:20px;
     border-radius:15px;
-    box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+    box-shadow:5px 20px 0px rgba(0,0,0,0.1);
     text-align:center;
     display:flex;
     flex-direction:column;
-    gap:30px;
-    color:gray; 
+    gap:20px;
+    
+}
+.side{
+    background-color: #a47148;
 }
 .buttons{
     display:grid;
@@ -45,21 +52,19 @@ gap:5px;
 }
 button{
     
-    padding:12px 30px;
+    padding:15px 12px;
     gap:10px;
     cursor:pointer;
     font-weight:bold;
-    border-radius:10px;
-    background-color:#de638a;
+    border-radius:30px;
+    background-color:rgb(46, 45, 45);
+    color:white;
     font-size:20px;
    
 }
 
 button:active{
     background-color: #ddd;
-}
-@media screen and(max-width:480px) {
-    padding:12px 20px;
 }
 
     </style>
@@ -70,31 +75,31 @@ button:active{
         
  <input type="text" id="display" class="display">   
   <div class="buttons">
-    <button onclick="clearDisplay('C')">c</button>
-    <button onclick="appendValue('()')">()</button>
+    <button onclick="clearDisplay('C')" class="side">c</button>
+    <button onclick="appendValue('()')" class="side">()</button>
     
-     <button onclick="deleteLast()"><i class="fa-solid fa-delete-left"></i></button>
+     <button onclick="deleteLast()" class="side"><i class="fa-solid fa-delete-left"></i></button>
       
- <button onclick="appendValue('+')">+</button>  
+ <button onclick="appendValue('+')" class="side">+</button>  
 
-    <button onclick="appendValue('0')">0</button>
+    <button onclick="appendValue('0')" >0</button>
     <button onclick="appendValue('1')">1</button>
     <button onclick="appendValue('2')">2</button>
-    <button onclick="appendValue('-')">-</button>
+    <button onclick="appendValue('-')" class="side">-</button>
     <button onclick="appendValue('3')">3</button>
     <button onclick="appendValue('4')">4</button>
     <button onclick="appendValue('5')">5</button>
-    <button onclick="appendValue('*')">*</button>
+    <button onclick="appendValue('*')" class="side">*</button>
     <button onclick="appendValue('6')">6</button>
     <button onclick="appendValue('7')">7</button>
     <button onclick="appendValue('8')">8</button>
-    <button onclick="appendValue('/')">/</button>
+    <button onclick="appendValue('/')" class="side">/</button>
     
     <button onclick="appendValue('%')">%</button>
     
     <button onclick="appendValue('9')">9</button>
     <button onclick="appendValue('.')">.</button>
-    <button onclick="calculate()">=</button>
+    <button onclick="calculate()" class="side">=</button>
     </div>
     <p class="answer"></p>
     </div>
